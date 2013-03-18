@@ -1,0 +1,91 @@
+<head>
+  <title>Test 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  {{> page}}
+  <!-- {{>logs_bootstrap}} -->
+</body>
+
+<template name="page">
+  
+  {{> addNode}}
+  
+  <div class="container">
+    <div class="row">
+      <div class="span2"></div>
+      <div class="span8">
+        {{> map}}
+      </div>
+      <div class="span2"></div>
+    </div>
+  </div>
+</template>
+
+<template name="map">
+  <div class="map">
+    {{#constant}}
+      <svg id="main_svg" viewBox="0 0 500 500" width="500" height="500" preserveAspectRatio="xMinYMin">
+      <!-- <image xlink:href="http://dciarletta.github.com/d3-floorplan/Sample_Floorplan.jpg"  -->
+        <!-- style="opacity: 1;" width="500" height="100%" preserveAspectRatio="xMinYMin"></image> -->
+      </svg>
+    {{/constant}}
+  </div>
+</template>
+
+<template name="createMap">
+  <div class="mask"></div>
+  <div class="modal">
+    <div class="modal-header">
+      <button type="button" class="close cancel">&times;</button>
+      <h3>Add party</h3>
+    </div>
+
+    <div class="modal-body">
+      {{#if error}}
+        <div class="alert alert-error">{{error}}</div>
+      {{/if}}
+
+      <label>Name</label>
+      <input type="text" class="name span5">
+
+      <label>Description</label>
+      <textarea class="description span5"></textarea>
+
+      <div class="thumbnail">
+        <img src="{{url}}"/>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <a href="#" class="btn cancel">Cancel</a>
+      <a href="#" class="btn btn-primary save">Add Map</a>
+    </div>
+  </div>
+</template>
+
+<template name="addNode">
+  <div id="addNodeDialog" class="modal fade" tabindex="-1" role="dialog" 
+    aria-labelledby="addNodeDialogLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close cancel" data-dismiss="modal" 
+        aria-hidden="true">&times;</button>
+      <h3>Add Node</h3>
+    </div>
+
+    <div class="modal-body">
+      <label>Node ID</label>
+      <input type="text" class="node_id span5">
+
+      <label>Serial #</label>
+      <input type="text" class="serial_num span5">
+    </div>
+
+    <div class="modal-footer">
+      <a href="#" class="btn cancel" data-dismiss="modal" aria-hidden="true">Cancel</a>
+      <a href="#" class="btn btn-primary save">Add Node</a>
+    </div>
+  </div>
+</template>
