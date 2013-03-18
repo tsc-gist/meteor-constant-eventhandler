@@ -1,0 +1,27 @@
+.tag {
+  fill: red;
+}
+.tag-alert {
+  stroke: yellow;
+  stroke-width: 2;
+  fill-opacity: 0;
+}
+.node {
+  fill: red;
+}
+/* map menu controls */
+.ui-active rect {fill: #212121}
+.ui-active text {fill: #fff}
+.ui-default rect {fill: #e6e6e6}
+.ui-default text {fill: #000}
+
+/* overlays */
+.polygon {stroke:white;stroke-width:2px;fill-opacity:0.2}
+.vertex {stroke:lime;stroke-width:2px;fill:none}
+
+/* vector field */
+.vector {stroke-width:1px;stroke:lightsteelblue}
+
+/* path plot */
+.pathplot path {stroke-width:2px;stroke:steelblue}
+.planned {stroke-dasharray:9, 5}

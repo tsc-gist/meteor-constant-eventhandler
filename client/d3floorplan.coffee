@@ -152,8 +152,9 @@ d3.floorplan = () ->
       .on("mouseover", () -> controls.selectAll("path.ui-show-hide").style("opacity", 1))
       .on("mouseout", () -> controls.selectAll("path.ui-show-hide").style("opacity", 0.5))
       .on("click", 
-        # try adding a timeout as recommended by jdolitsky on IRC
-        ()-> Meteor.setTimeout(() ->
+        # try adding a timeout as recommended by jdolitsky on IRC (doesn't work)
+        # ()-> Meteor.setTimeout(
+        () ->
           console.log("CLICK")
           if (controls.select(".hide").classed("ui-show-hide"))
             controls.transition()
@@ -251,6 +252,7 @@ d3.floorplan.imagelayer = () ->
   xScale = d3.scale.linear()
   yScale = d3.scale.linear()
   id = "fp-imagelayer-" + new Date().valueOf()
+  name = "imagelayer"
 
   images = (g) ->
   
