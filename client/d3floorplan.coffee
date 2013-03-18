@@ -187,7 +187,6 @@ d3.floorplan = () ->
                 null
               )
             null
-        , 1000)
       )
 
       controls.append("rect")
